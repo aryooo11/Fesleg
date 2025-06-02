@@ -1033,7 +1033,6 @@ footer {
 .faq-item.active .faq-answer {
   display: block;
   max-height: 200px;
-  /* Sesuaikan sesuai kebutuhan */
   padding: 15px 20px;
 }
 
