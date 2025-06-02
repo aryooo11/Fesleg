@@ -1,0 +1,1290 @@
+/* ===== VARIABLES & RESET ===== */
+:root {
+  /* Color Variables */
+  --primary-color: #0C2265;
+  --secondary-color: #163fbb;
+  --third-color: #3e88ff;
+  --forth-color: #62c0ff;
+  --fifth-color: #8fd1fc;
+  --sixth-color: #bbe0ff;
+  --primary: #3366ff;
+  --secondary: #6dd5ed;
+  --accent: #2193b0;
+  --dark: #091e5d;
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #666;
+  --bg-light: #f9f9ff;
+  --card-bg: #ffffff;
+  --gradient-blue: linear-gradient(to right, #4facfe, #00f2fe);
+  --gradient-purple: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0C2265;
+  /* Ganti dengan warna yang kamu mau */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #bbe0ff;
+  /* Warna latar belakang scrollbar */
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 100;
+  font-display: auto;
+  src: url('font/Poppins.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100;
+  font-display: auto;
+  src: url('font/Inter.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'Poppins';
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-family: 'Poppins';
+  letter-spacing: 1px;
+}
+
+p,
+a {
+  font-family: 'Inter';
+}
+
+body {
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+#logo_dpm {
+  width: 75px;
+  height: 75px;
+  /* Maintains aspect ratio */
+  border-radius: 8px;
+  /* Slightly rounded corners for the logo */
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+
+#logo_sv_ipb {
+  width: 225px;
+  height: 72px;
+
+}
+
+@media screen and (max-width:768px) {
+  #logo_dpm {
+    width: 40px;
+    height: 40px;
+    /* Maintains aspect ratio */
+    border-radius: 8px;
+    /* Slightly rounded corners for the logo */
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  #logo_sv_ipb {
+    width: 120px;
+    height: 39px;
+  }
+}
+
+/* Body styling for context, can be removed if not needed */
+.hero-2 h2 {
+  font-weight: 600;
+  margin: 1rem;
+  /* Space below the heading */
+  color: #ffffff;
+}
+
+.hero-2 h1 {
+  font-weight: 600;
+  margin: 1rem;
+  /* Space below the heading */
+  color: #ffffff;
+}
+
+.hero-2 img {
+  width: 250px;
+  /* Full width for the image */
+  height: auto;
+  /* Maintains aspect ratio */
+  max-width: 600px;
+  /* Max width for larger screens */
+  border-radius: 8px;
+  /* Slightly rounded corners for the image */
+  margin: rem;
+}
+
+/* Navigation Bar Styling */
+nav {
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  /* Vertical padding for the nav bar */
+  position: sticky;
+  /* Makes the navbar sticky */
+  top: 0;
+  z-index: 1000;
+  /* Ensures navbar stays on top */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container-a {
+  /* This container centers the nav content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Aligns items in the center vertically */
+  max-width: 1250px;
+  /* Max width for nav content */
+  margin: 0 auto;
+  /* Centers the container */
+  padding: 0 1rem;
+  /* Horizontal padding for nav content */
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.nav-desktop {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  /* Adjusted gap for nav links */
+}
+
+.nav-links a {
+  color: #e0f2fe;
+  /* Lighter, more readable aqua variant */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  outline: none;
+}
+
+/* Hero Section Styling */
+.hero {
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color), var(--third-color));
+  min-height: 80vh;
+  /* Minimum height of the hero section */
+  padding: 4rem 0;
+  /* Desktop: Vertical padding for the hero section */
+  display: flex;
+  /* To help center hero-inner-container if needed */
+  align-items: center;
+  /* Vertically align content */
+}
+
+.hero-inner-container {
+  /* Constrained width content area */
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centers the container */
+  padding: 0 2rem;
+  /* Desktop: Horizontal padding for content inside */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* Ensures it takes up available space up to max-width */
+  gap: 4rem;
+  /* Gap between text content and image */
+}
+
+.hero-content {
+  flex: 1;
+  /* Takes available space */
+  color: white;
+  /* padding-right: 2rem; /* Removed, gap is now on hero-inner-container */
+}
+
+.container-b h1 {
+  /* Container for h1 and p in hero-content */
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  /* Responsive font size */
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container-b p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  /* Responsive font size */
+  margin-bottom: 2.5rem;
+  /* Increased margin */
+  line-height: 1.7;
+  text-align: center;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  /* Gap between buttons */
+}
+
+.btn-light {
+  /* Custom button styling */
+  background-color: white;
+  color: var(--primary-color) !important;
+  /* Important to override Bootstrap if necessary */
+  padding: 0.9rem 2.2rem;
+  /* Slightly larger padding */
+  border-radius: 50px;
+  /* Fully rounded buttons */
+  font-weight: bold;
+  text-decoration: none;
+  /* Ensure it looks like a button if it's an <a> tag */
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  background-color: var(--primary-color);
+  color: white !important;
+  border-color: white;
+  outline: none;
+}
+
+/* Secondary button style (example) */
+.btn-outline {
+  background-color: transparent;
+  color: white !important;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: white;
+  color: var(--primary-color) !important;
+  outline: none;
+}
+
+section {
+  padding: 2rem 1rem;
+  /* Padding for sections */
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  /* Center content horizontally */
+  justify-content: center;
+  /* Center content vertically */
+  padding: 2rem 1rem;
+  /* Padding for the hero section */
+  min-height: 60vh;
+  /* Minimum height for the hero section */
+  background-color: gradient(to bottom, var(--third-color), var(--secondary-color), var(--third-color));
+}
+
+.hero-2 {
+  padding: 50px 1rem;
+  margin: auto;
+  text-align: center;
+  min-height: 300px;
+  background: linear-gradient(to bottom, var(--third-color), var(--forth-color), var(--fifth-color));
+}
+
+.hero-image {
+  flex: 1;
+  /* Takes available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-fesleg-background {
+  background-color: white;
+  border-radius: 50%;
+  /* Makes it a circle */
+  padding: 10%;
+  /* Relative padding for scalability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(280px, 80%, 450px);
+  /* Responsive width: min, preferred, max */
+  aspect-ratio: 1 / 1;
+  /* Maintains a 1:1 aspect ratio (square for circle) */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  /* Slightly enhanced shadow */
+}
+
+.hero-image img {
+  max-width: 100%;
+  /* Max width relative to its container */
+  max-height: 100%;
+  /* Max height relative to its container */
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  /* Ensures the image fits well within the circle's padding */
+  border-radius: 8px;
+  /* If the actual image should have rounded corners */
+}
+
+.kompetisi-section {
+  background: linear-gradient(to bottom, var(--fifth-color), var(--sixth-color), #fff);
+  /* Gradient background */
+  padding: 2rem 1rem;
+  /* Padding for the section */
+  display: flex;
+  flex-direction: column;
+  /* Stack header and cards vertically */
+  align-items: center;
+  /* Center content horizontally */
+  min-height: 60vh;
+  /* Minimum height for the section */
+}
+
+.kompetisi-header {
+  padding: 2rem 1rem;
+  /* Padding for the header */
+  text-align: center;
+  /* Center the header text */
+}
+
+
+.kompetisi-header h2 {
+
+  font-weight: 600;
+  color: white;
+  /* White text for better contrast */
+  text-align: center;
+  /* Center the heading */
+  margin: 1rem;
+  /* Space below the heading */
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  /* Space between cards */
+  height: 100%;
+  /* Ensures the container takes full height */
+  flex-grow: 1;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 0;
+  /* Remove margin, use gap from container */
+  display: flex;
+  flex: 1 1 300px;
+  /* Responsive width */
+  width: 18rem;
+  max-width: 24rem;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  /* Fixed size for card images */
+  border-radius: 8px;
+  margin: 2rem;
+  vertical-align: middle;
+}
+
+.card-body {
+  flex: 1;
+  /* Takes available space */
+  display: flex;
+  flex-direction: column;
+  /* Stack content vertically */
+  justify-content: center;
+  /* Center content vertically */
+
+}
+
+.card-body a {
+  margin-top: auto;
+  /* Pushes the link to the bottom of the card */
+}
+
+@media screen and (max-width:768px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* Space between cards */
+    height: 100%;
+    /* Ensures the container takes full height */
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 0;
+    /* Remove margin, use gap from container */
+    display: flex;
+    flex: 1 1 300px;
+    /* Responsive width */
+    max-width: 300px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    /* Fixed size for card images */
+    border-radius: 8px;
+    margin: 2rem;
+    vertical-align: middle;
+  }
+
+}
+
+@media screen and (max-width:1024px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* Space between cards */
+    height: 100%;
+    /* Ensures the container takes full height */
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 0;
+    /* Remove margin, use gap from container */
+    display: flex;
+    flex: 1 1 300px;
+    /* Responsive width */
+    max-width: 360px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+    /* Fixed size for card images */
+    border-radius: 8px;
+    margin: 2rem;
+    vertical-align: middle;
+  }
+
+}
+
+@media screen and (max-width:768px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* Space between cards */
+    height: 100%;
+    /* Ensures the container takes full height */
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 0;
+    /* Remove margin, use gap from container */
+    display: flex;
+    flex: 1 1 300px;
+    /* Responsive width */
+    max-width: 300px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    /* Fixed size for card images */
+    border-radius: 8px;
+    margin: 2rem;
+    vertical-align: middle;
+  }
+
+}
+
+
+/* Footer Styling (Placeholder) */
+footer {
+  background-color: #0A193E;
+  /* Darker shade of primary for footer */
+  color: #bdc1c6;
+  /* Light grey text for footer */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: auto;
+  /* Pushes footer to bottom if content is short */
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 992px) {
+
+  /* Adjusted breakpoint for better tablet layout */
+  .hero-inner-container {
+    gap: 1.5rem;
+    /* Reduce gap on smaller screens */
+  }
+
+  .container-b h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .container-b p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .container-a {
+    flex-direction: column;
+    /* Stack logo and links vertically */
+    gap: 1rem;
+    /* Gap between logo and links block */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    /* Allow links to wrap */
+    justify-content: center;
+    /* Center wrapped links */
+    gap: 6px;
+
+    /* Adjust gap for wrapped links */
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0rem;
+    font-size: 14px;
+  }
+
+  .hero {
+    /* Mobile: Vertical and Horizontal padding for the full-width element */
+    padding: 2rem 1rem;
+    min-height: auto;
+    /* Allow height to adjust to content */
+  }
+
+  .hero-inner-container {
+    flex-direction: column;
+    /* Stack content and image vertically */
+    text-align: center;
+    /* Center text content */
+    padding: 0 1rem;
+    /* Mobile: Add some horizontal padding directly to inner container */
+  }
+
+  .hero-content {
+    padding-right: 0;
+    /* Remove padding-right */
+    margin-bottom: 2rem;
+    /* Space below text content before image */
+    width: 100%;
+    /* Ensure it takes full width in column layout */
+  }
+
+  .container-b h1 {
+    font-size: 2rem;
+  }
+
+  .container-b p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    /* Stack buttons vertically */
+    align-items: center;
+    /* Center buttons */
+    width: 100%;
+    /* Make buttons container take full width */
+  }
+
+  .hero-buttons .btn-light,
+  .hero-buttons .btn-outline {
+    width: 80%;
+    /* Make buttons wider on mobile */
+    max-width: 300px;
+    /* Max width for buttons */
+    padding: 0.8rem 1.5rem;
+  }
+
+  .logo-fesleg-background {
+    width: clamp(200px, 70vw, 300px);
+    /* Adjust size for mobile */
+    padding: 8%;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ===== TIMELINE SECTION ===== */
+.timeline-section {
+  background: var(--bg-light);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.timeline-section h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.timeline-subtitle {
+  color: var(--text-medium);
+  max-width: 600px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 0 20px;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--secondary), var(--accent));
+  z-index: 1;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+  animation-delay: 0.2s;
+}
+
+.timeline-button {
+  width: 45%;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-button h3 {
+  font-size: 1.125rem;
+  margin: 0 0 8px 0;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.timeline-button span {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  position: absolute;
+  z-index: 3;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  right: 0;
+  transform: translateX(20px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  left: 0;
+  transform: translateX(-20px);
+}
+
+.timeline-content.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.timeline-circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--secondary), var(--accent));
+  border: 3px solid white;
+  box-shadow: 0 0 0 4px #d9f1fb;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item {
+    padding-left: 60px;
+    /* Memberi ruang untuk circle */
+  }
+
+  .timeline-button {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.guidebook {
+  background: linear-gradient(to right, #3176FF, #14B8A6);
+  text-align: center;
+}
+
+.guidebook p {
+  max-width: 630px;
+  margin: auto;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.guidebook-btn {
+  padding: 10px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: white;
+  color: var(--gradient-blue);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.guidebook-btn:hover {
+  transform: translateY(-3px);
+  background: var(--gradient-blue);
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* ===== PENDAFTARAN SECTION ===== */
+.pendaftaran {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.pendaftaran .atas {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.pendaftaran h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  font-family: 'Poppins';
+  margin-bottom: 10px;
+}
+
+.pendaftaran p {
+  font-size: 1.2rem;
+  color: var(--text-medium);
+}
+
+#pendaftaran .cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto 40px;
+}
+
+#pendaftaran .card {
+  background: var(--gradient-purple);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #00f2fe, #4facfe, #f77062) 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#pendaftaran .card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: transform 0.5s ease;
+  transform: translateY(100%);
+}
+
+
+#pendaftaran .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+
+#pendaftaran .card:hover::after {
+  transform: translateY(0);
+}
+
+#pendaftaran .card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+#pendaftaran .card img {
+  width: 80px;
+  height: auto;
+}
+
+#pendaftaran .card button {
+  padding: 10px 25px;
+  border-radius: 30px;
+  background: white;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+#pendaftaran .card button:hover {
+  background: #f2f2f2;
+}
+
+.guidebook-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* ===== INFO/FAQ SECTION ===== */
+.info {
+  /* background: linear-gradient(to bottom, #fffce9 20%, #f4f1ee 80%); */
+  background-color: white;
+  padding: 60px 0;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: white;
+  color: var(--text-dark);
+  padding: 15px 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.faq-question .icon {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.faq-answer {
+  display: none;
+  background-color: #f4f4ff;
+  padding: 15px 20px;
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  border-top: 1px solid #ccc;
+  animation: fadeDown 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  max-height: 200px;
+  /* Sesuaikan sesuai kebutuhan */
+  padding: 15px 20px;
+}
+
+/* ===== MEDIA SOSIAL SECTION ===== */
+
+.medsos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.medsos .kiri img {
+  width: 240px;
+  height: auto;
+}
+
+@media screen and (max-width:768px) {
+  .medsos .kiri img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+.medsos .kanan h3 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.medsos .kanan a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.medsos .kanan .bawah1,
+.medsos .kanan .bawah2,
+.medsos .kanan div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.medsos .kanan .bawah1 p,
+.medsos .kanan .bawah2 p,
+.medsos .kanan div:last-child p {
+  margin: 0;
+}
+
+.medsos .kanan img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  text-decoration: none;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.footer-parent {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100px;
+  justify-content: space-between;
+  border-bottom: 1px;
+  border-color: #9CA3AF;
+  border-bottom-style: solid;
+  gap: 50px;
+  text-align: start;
+  padding-bottom: 70px;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+.footer-parent p {
+  font-size: 16px;
+  color: #BDC1D6;
+}
+
+.footer-parent h3 {
+  font-size: 24px;
+  font-family: 'Poppins';
+  margin-bottom: 0px;
+}
+
+.footer-logo-parent {
+  display: flex;
+  gap: 30px;
+}
+
+
+@media screen and (max-width:640px) {
+  .footer-parent {
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content: start;
+  }
+}
+
+.footer-grid {
+  display: grid;
+  margin-top: 20px;
+  row-gap: 10px;
+  color: white;
+  max-width: 300px;
+}
+
+.footer-grid a {
+  text-decoration: none;
+  color: #BDC1D6;
+  display: inline-block;
+  position: relative;
+  width: max-content;
+}
+
+.footer-grid a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.footer-grid a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.footer-grid a:not(:hover)::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.footbar {
+  background-color: var(--dark);
+  color: white;
+  padding: 30px 0;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.footer-left {
+  font-size: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media screen and (max-width: 768px) {
+  .timeline-container::before {
+    left: 40px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    margin-bottom: 40px;
+  }
+
+  .timeline-button,
+  .timeline-content {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .timeline-content {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none !important;
+    display: none;
+  }
+
+  .timeline-content.active {
+    display: block;
+  }
+
+  .timeline-circle {
+    left: 40px;
+    top: 50px;
+  }
+
+  #pendaftaran .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #pendaftaran .card {
+    max-width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    flex-direction: column;
+  }
+}
