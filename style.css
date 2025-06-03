@@ -88,7 +88,7 @@ body {
 
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1000px) {
   #logo_dpm {
     width: 40px;
     height: 40px;
@@ -585,7 +585,7 @@ footer {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
   .container-a {
     flex-direction: column;
@@ -594,8 +594,8 @@ footer {
     /* Gap between logo and links block */
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .nav-mobile {
@@ -1286,4 +1286,54 @@ footer a {
   .footer-right {
     flex-direction: column;
   }
+}
+
+/* Up Animation */
+.animate {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate.fade-in {
+  scale: 0.1;
+  transition: opacity 1s ease, transform 1s ease;
+  transition: scale 1s ease, transform 1s ease;
+}
+
+/* Fade In */
+.fade-in.animate-active {
+  opacity: 1;
+  scale: 1;
+}
+
+/* Fade Out (you may not use this typically, but here's an example) */
+.fade-out.animate-active {
+  opacity: 0;
+}
+
+
+/* Slide directions */
+.slide-up {
+  transform: translateY(50px);
+}
+
+.slide-down {
+  transform: translateY(-50px);
+}
+
+.slide-left {
+  transform: translateX(50px);
+}
+
+.slide-right {
+  transform: translateX(-50px);
+}
+
+/* When active, reset transform and show */
+.animate-active.slide-up,
+.animate-active.slide-down,
+.animate-active.slide-left,
+.animate-active.slide-right {
+  transform: translate(0, 0);
+  opacity: 1;
 }
